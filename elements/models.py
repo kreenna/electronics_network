@@ -35,6 +35,10 @@ class Factory(ContactInfo):  # завод
     created_at = models.DateTimeField(auto_now_add=True)
     products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
 
+    class Meta:
+        verbose_name = "Завод"
+        verbose_name_plural = "Заводы"
+
     def clean(self):
         # проверяем, что поставщик у завода только завод (сам или другой)
         if self.supplier and not isinstance(self.supplier, Factory):
@@ -57,6 +61,10 @@ class RetailNetwork(ContactInfo):  # розничная сеть
                                            verbose_name="Задолженность поставщику")
     created_at = models.DateTimeField(auto_now_add=True)
     products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
+
+    class Meta:
+        verbose_name = "Розничная сеть"
+        verbose_name_plural = "Розничные сети"
 
     def clean(self):
         # проверяем, что поставщик ровно один: либо завод, либо другая сеть
@@ -82,6 +90,10 @@ class IndividualEntrepreneur(ContactInfo):  # ИП
                                            verbose_name="Задолженность поставщику")
     created_at = models.DateTimeField(auto_now_add=True)
     products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
+
+    class Meta:
+        verbose_name = "Индивидуальный предприниматель"
+        verbose_name_plural = "Индивидуальные предприниматели"
 
     def clean(self):
         # проверяем, что поставщик выбран только один: завод, розничная сеть или другой ИП
