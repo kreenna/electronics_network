@@ -1,9 +1,9 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 
-from .models import Factory, RetailNetwork, IndividualEntrepreneur
+from .models import Factory, IndividualEntrepreneur, RetailNetwork
 from .permissions import IsActiveUser
-from .serializers import FactorySerializer, RetailNetworkSerializer, IndividualEntrepreneurSerializer
+from .serializers import FactorySerializer, IndividualEntrepreneurSerializer, RetailNetworkSerializer
 
 
 class FactoryViewSet(viewsets.ModelViewSet):

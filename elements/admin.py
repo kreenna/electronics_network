@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from elements.models import Product, Factory, RetailNetwork, IndividualEntrepreneur
+from elements.models import Factory, IndividualEntrepreneur, Product, RetailNetwork
 
 
 @admin.register(Product)
