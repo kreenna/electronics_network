@@ -1,7 +1,13 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from elements.models import Factory, RetailNetwork, IndividualEntrepreneur
+from elements.models import Product, Factory, RetailNetwork, IndividualEntrepreneur
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "title", "description")
+    search_fields = ("id", "user")
 
 
 @admin.register(Factory)

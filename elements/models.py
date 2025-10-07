@@ -18,9 +18,12 @@ class Product(models.Model):  # сам продукт
     model = models.CharField(max_length=255, verbose_name="Модель")
     release_date = models.DateField(verbose_name="Дата выхода на рынок")
 
+    class Meta:
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
+
     def __str__(self):
         return f"{self.name} ({self.model})"
-
 
 
 class Factory(ContactInfo):  # завод

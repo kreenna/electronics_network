@@ -1,6 +1,12 @@
 from rest_framework import serializers
 
-from .models import Factory, RetailNetwork, IndividualEntrepreneur
+from .models import Product, Factory, RetailNetwork, IndividualEntrepreneur
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = "__all__"
 
 
 class FactorySerializer(serializers.ModelSerializer):
