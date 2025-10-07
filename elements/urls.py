@@ -1,7 +1,7 @@
 from rest_framework.routers import SimpleRouter
 
 from elements.apps import ElementsConfig
-from .views import FactoryViewSet, RetailNetworkViewSet, IndividualEntrepreneurViewSet
+from .views import FactoryViewSet, IndividualEntrepreneurViewSet, RetailNetworkViewSet
 
 app_name = ElementsConfig.name
 
