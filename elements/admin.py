@@ -6,8 +6,8 @@ from elements.models import Product, Factory, RetailNetwork, IndividualEntrepren
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "title", "description")
-    search_fields = ("id", "user")
+    list_display = ("id", "name", "model", "release_date")
+    search_fields = ("id", "model")
 
 
 @admin.register(Factory)
