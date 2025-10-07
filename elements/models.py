@@ -36,7 +36,7 @@ class Factory(ContactInfo):  # завод
     debt_to_supplier = models.DecimalField(max_digits=12, decimal_places=2, default=0,
                                            verbose_name="Задолженность поставщику")
     created_at = models.DateTimeField(auto_now_add=True)
-    products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
+    products = models.ManyToManyField(Product, null=True, blank=True, verbose_name="Продукты")
 
     class Meta:
         verbose_name = "Завод"
@@ -63,7 +63,7 @@ class RetailNetwork(ContactInfo):  # розничная сеть
     debt_to_supplier = models.DecimalField(max_digits=12, decimal_places=2, default=0,
                                            verbose_name="Задолженность поставщику")
     created_at = models.DateTimeField(auto_now_add=True)
-    products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
+    products = models.ManyToManyField(Product, null=True, blank=True, verbose_name="Продукты")
 
     class Meta:
         verbose_name = "Розничная сеть"
@@ -92,7 +92,7 @@ class IndividualEntrepreneur(ContactInfo):  # ИП
     debt_to_supplier = models.DecimalField(max_digits=12, decimal_places=2, default=0,
                                            verbose_name="Задолженность поставщику")
     created_at = models.DateTimeField(auto_now_add=True)
-    products = models.ManyToManyField(Product, blank=True, verbose_name="Продукты")
+    products = models.ManyToManyField(Product, null=True, blank=True, verbose_name="Продукты")
 
     class Meta:
         verbose_name = "Индивидуальный предприниматель"
